@@ -1,0 +1,455 @@
+/* UserDashboard.module.css */
+.dashboard {
+  min-height: 100vh;
+  background: #f8fafc;
+  font-family: 'DM Sans', 'Segoe UI', system-ui, sans-serif;
+  padding: 28px 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Bouton retour */
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: #64748b;
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 0;
+  transition: color 0.2s;
+}
+.backBtn:hover { color: #0f172a; }
+
+/* Profil header */
+.profileHeader {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(99,102,241,0.3);
+}
+.profileInfo h1 {
+  margin: 0 0 4px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+.profileInfo p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+.skeletonName {
+  width: 160px;
+  height: 20px;
+  background: #e2e8f0;
+  border-radius: 6px;
+}
+.roleBadge {
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.adminBadge {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+.userBadge {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+/* Cartes */
+.card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  transition: box-shadow 0.2s;
+}
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+/* Section title */
+.sectionTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+.sectionTitleLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.iconWrapper {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.sectionTitleLeft span {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+.totalBadge {
+  font-size: 0.75rem;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 4px 8px;
+  border-radius: 20px;
+}
+
+/* Status pill */
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+/* Info row */
+.infoRow {
+  display: flex;
+  padding: 8px 0;
+  border-bottom: 1px solid #f8fafc;
+  gap: 16px;
+}
+.infoLabel {
+  width: 130px;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  flex-shrink: 0;
+}
+.infoValue {
+  font-size: 0.8rem;
+  color: #0f172a;
+  font-weight: 500;
+}
+.mono {
+  font-family: monospace;
+  font-size: 0.75rem;
+}
+
+/* General info grid */
+.generalGrid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: start;
+}
+@media (max-width: 640px) {
+  .generalGrid { grid-template-columns: 1fr; }
+}
+.qrWrapper {
+  text-align: center;
+}
+.qrCard {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 12px;
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.qrCard p {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin: 6px 0 0;
+}
+.qrPlaceholder {
+  width: 134px;
+  height: 134px;
+  border: 2px dashed #e2e8f0;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #94a3b8;
+  font-size: 0.7rem;
+}
+
+/* Subscriptions list */
+.subscriptionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.subscriptionItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #f8fafc;
+  transition: all 0.2s;
+}
+.subscriptionIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+.subscriptionInfo {
+  flex: 1;
+}
+.subscriptionId {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #0f172a;
+}
+.subscriptionDate {
+  font-size: 0.7rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* Table styles */
+.tableWrapper {
+  overflow-x: auto;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+.table th {
+  text-align: left;
+  padding: 10px 12px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #e2e8f0;
+}
+.table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f8fafc;
+  color: #0f172a;
+}
+.ref {
+  color: #6366f1;
+  font-weight: 600;
+  font-family: monospace;
+}
+
+/* Tab bar */
+.tabBar {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 1rem;
+}
+.tab {
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.15s;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.tabActive {
+  color: #6366f1;
+  border-bottom-color: #6366f1;
+}
+.tabCount {
+  margin-left: 6px;
+  background: #f1f5f9;
+  color: #94a3b8;
+  padding: 1px 6px;
+  border-radius: 20px;
+  font-size: 0.65rem;
+}
+.tabActive .tabCount {
+  background: #ede9fe;
+  color: #6366f1;
+}
+
+/* Timeline activities */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.timelineItem {
+  display: flex;
+  gap: 14px;
+  padding-bottom: 16px;
+  position: relative;
+}
+.timelineDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-top: 4px;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+}
+.timelineContent {
+  flex: 1;
+}
+.timelineText {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #0f172a;
+  margin-bottom: 2px;
+}
+.timelineDate {
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+.showMoreBtn {
+  background: none;
+  border: none;
+  color: #6366f1;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 8px;
+}
+
+/* Spinner & empty */
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+}
+.spinner {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #e2e8f0;
+  border-top-color: #6366f1;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.empty {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  padding: 20px 0;
+  margin: 0;
+}
+
+/* Modal styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modalContent {
+  position: relative;
+  background: white;
+  border-radius: 24px;
+  padding: 2rem;
+  max-width: 90vw;
+  width: auto;
+  text-align: center;
+  box-shadow: 0 20px 35px -8px rgba(0,0,0,0.3);
+}
+
+.modalClose {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #f1f5f9;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #475569;
+  transition: all 0.2s;
+}
+.modalClose:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.modalQR {
+  background: white;
+  padding: 1rem;
+  border-radius: 16px;
+  margin: 0.5rem 0;
+}
+
+.modalText {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.modalToken {
+  font-size: 0.7rem;
+  font-family: monospace;
+  color: #64748b;
+  word-break: break-all;
+  background: #f8fafc;
+  padding: 0.5rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}

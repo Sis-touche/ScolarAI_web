@@ -1,0 +1,228 @@
+.container {
+  padding: 1rem;
+}
+
+.successBanner {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.successIcon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #0f766e, #0d9488);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 20px rgba(15, 118, 110, 0.3);
+}
+
+.successBanner h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+}
+
+.successBanner p {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 1.5rem;
+  transition: box-shadow 0.2s;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.recapList {
+  margin-bottom: 1.2rem;
+}
+
+.loadingBox,
+.errorBox,
+.emptyBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+  background: #f8fafc;
+  border-radius: 16px;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.errorBox {
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.spinner {
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.qrDescription {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.qrWrapper {
+  background: white;
+  padding: 1rem;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.qrWrapper:hover {
+  transform: scale(1.02);
+}
+
+.token {
+  font-size: 0.7rem;
+  font-family: monospace;
+  background: #f1f5f9;
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  word-break: break-all;
+  margin-top: 0.8rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: 40px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.btnPrimary {
+  background: #0f766e;
+  color: white;
+}
+
+.btnPrimary:hover {
+  background: #0d5c56;
+  transform: translateY(-1px);
+}
+
+.btnSecondary {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.btnSecondary:hover {
+  background: #e2e8f0;
+}
+
+.navRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  border-radius: 32px;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  max-width: 90vw;
+  width: auto;
+}
+
+.modalClose {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #f1f5f9;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.modalQR {
+  background: white;
+  padding: 1rem;
+}
+
+.modalText {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.modalToken {
+  font-size: 0.75rem;
+  font-family: monospace;
+  background: #f8fafc;
+  padding: 0.5rem;
+  border-radius: 12px;
+}

@@ -1,0 +1,538 @@
+/* ============================
+   Variables CSS & Reset
+   ============================ */
+:root {
+  --color-primary: #1A56DB;
+  --color-primary-hover: #1546b5;
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+  --color-bg: #ffffff;
+  --color-bg-soft: #F4F8FF;
+  --color-bg-light: #E6F0FF;
+  --color-border: #e2e8f0;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.05);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.06);
+  --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.05);
+  --radius: 12px;
+  --radius-btn: 9999px;
+  --transition: 0.2s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* ============================
+   Conteneur principal
+   ============================ */
+.home {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-soft) 50%, var(--color-bg-light) 100%);
+  overflow: hidden;
+  padding: 1rem 1.5rem;
+}
+
+/* ============================
+   Effets de lueur (orbes floutés)
+   ============================ */
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow--top-left {
+  top: 5%;
+  left: 5%;
+  width: 18rem;
+  height: 18rem;
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.glow--top-right {
+  top: 10%;
+  right: -3rem;
+  width: 24rem;
+  height: 24rem;
+  background: rgba(59, 130, 246, 0.15);
+}
+
+.glow--bottom-center {
+  bottom: 5%;
+  left: 25%;
+  width: 20rem;
+  height: 20rem;
+  background: rgba(34, 211, 238, 0.1);
+}
+
+/* ============================
+   Header
+   ============================ */
+.home__header {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.home__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.home__logo-icon {
+  position: relative;
+  width: 2.25rem;
+  height: 2.25rem;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home__logo-file {
+  width: 1.50rem;
+  height: 1.50rem;
+  color: var(--color-primary);
+}
+
+.home__logo-check {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: #3b82f6;
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  background: white;
+  border-radius: 50%;
+}
+
+.home__logo-text {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.home__cta {
+  background: var(--color-primary);
+  color: white;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-btn);
+  font-weight: 500;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition), transform 0.1s ease;
+  box-shadow: 0 4px 6px -1px rgba(26, 86, 219, 0.2);
+}
+.home__cta:hover {
+  background: var(--color-primary-hover);
+}
+.home__cta:active {
+  transform: scale(0.95);
+}
+
+/* ============================
+   Section texte principale
+   ============================ */
+.home__main {
+  max-width: 64rem;
+  margin: 3rem auto 4rem;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.home__title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.home__subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  max-width: 48rem;
+  margin: 0 auto;
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+/* ============================
+   Panneaux (workflow interactif)
+   ============================ */
+.panels {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 10;
+  padding: 0 1rem;
+}
+
+/* Style de base commun à tous les panneaux */
+.panel {
+  background: white;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  /* Hauteur flexible, s'adapte au contenu */
+  min-height: 380px;
+}
+
+/* Panneau de gauche (position 0) */
+.panel--left {
+  background: #fafafa;
+  transform-origin: right center;
+}
+
+/* Panneau central (position 1) – mis en avant */
+.panel--center {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  border-color: rgba(59, 130, 246, 0.2);
+  box-shadow: var(--shadow-xl);
+  z-index: 30;
+  padding: 2rem;
+}
+
+/* Panneau de droite (position 2) */
+.panel--right {
+  background: white;
+  transform-origin: left center;
+}
+
+/* Rendu cliquable pour les panneaux latéraux */
+.panel--clickable {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.panel--clickable:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Contenu spécifique du panneau source */
+.panel__content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.panel__header {
+  border-bottom: 1px solid rgba(219, 234, 254, 0.8);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  font-family: monospace;
+  color: #94a3b8;
+}
+
+.panel__data {
+  color: #334155;
+  font-family: system-ui, sans-serif;
+  font-weight: 500;
+}
+
+.panel__lines {
+  flex: 1;
+  background: repeating-linear-gradient(
+    #e2e8f0 0px,
+    #e2e8f0 1px,
+    transparent 1px,
+    transparent 24px
+  );
+  opacity: 0.4;
+  position: relative;
+}
+
+.panel__score {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 4rem;
+  height: 4rem;
+  border: 2px solid #ef4444;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ef4444;
+  font-weight: 700;
+  transform: rotate(12deg);
+}
+
+.panel__laser {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00D2FF, transparent);
+  box-shadow: 0 0 12px 4px rgba(0, 210, 255, 0.5);
+  z-index: 20;
+  pointer-events: none;
+}
+
+/* Panneau extraction (centré) */
+.panel__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 1.5rem 0;
+}
+
+.panel__field {
+  margin-bottom: 1.25rem;
+}
+
+.panel__label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+}
+
+.panel__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+}
+
+.panel__value {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.panel__value--bold {
+  font-weight: 700;
+}
+
+/* Badges */
+.badge {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.badge--confidence {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+.badge--high {
+  background: #2563eb;
+  color: white;
+  box-shadow: 0 2px 4px rgba(37,99,235,0.2);
+}
+
+/* Panneau export – boutons */
+.panel__export-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+  height: 100%;
+  padding: 1.5rem;
+}
+
+.export-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: background var(--transition);
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.export-btn--primary {
+  background: var(--color-primary);
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(26,86,219,0.2);
+}
+.export-btn--primary:hover {
+  background: var(--color-primary-hover);
+}
+
+.export-btn--secondary {
+  background: white;
+  color: #334155;
+  border-color: var(--color-border);
+}
+.export-btn--secondary:hover {
+  background: #f8fafc;
+}
+
+.export-btn__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: inherit;
+  flex-shrink: 0;
+}
+.export-btn--primary .export-btn__icon {
+  color: #bfdbfe;
+}
+
+.export-btn__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.export-btn__main {
+  font-weight: 600;
+}
+
+.export-btn__sub {
+  font-size: 0.75rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+.export-btn--primary .export-btn__sub {
+  color: #bfdbfe;
+}
+
+/* ============================
+   Footer
+   ============================ */
+.home__footer {
+  max-width: 28rem;
+  margin: 3rem auto 0;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.home__footer-text {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  margin-bottom: 0.75rem;
+}
+
+.home__avatars {
+  display: flex;
+  justify-content: center;
+  padding: 0.25rem 0;
+}
+
+.home__avatar {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+  margin-left: -0.5rem;
+  transition: transform 0.2s;
+}
+.home__avatar:first-child {
+  margin-left: 0;
+}
+.home__avatar:hover {
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+/* ============================
+   Étoile décorative
+   ============================ */
+.home__star {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 2rem;
+  color: #cbd5e1;
+  opacity: 0.6;
+  font-size: 1.25rem;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================
+   Responsive
+   ============================ */
+@media (min-width: 768px) {
+  .home__title {
+    font-size: 3rem;
+  }
+
+  .panels {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  /* Largeur et marges pour l'effet de chevauchement */
+  .panel--left {
+    width: 32%;
+    margin-right: -1rem;
+  }
+  .panel--center {
+    width: 38%;
+    margin: 0 -0.5rem;
+  }
+  .panel--right {
+    width: 32%;
+    margin-left: -1rem;
+  }
+
+  .panel--clickable:hover {
+    transform: scale(1.03) translateY(-2px);
+    z-index: 25; /* passe légèrement au-dessus sans dépasser le centre */
+  }
+}
+
+@media (min-width: 1024px) {
+  .home {
+    padding: 2rem 4rem;
+  }
+}

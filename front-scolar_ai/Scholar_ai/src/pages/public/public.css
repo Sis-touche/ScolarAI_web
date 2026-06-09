@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+	:root {
+				--transition: all 0.3s ease;
+			}
+			
+			.light-theme {
+				--bg-primary: #ffffff;
+				--bg-secondary: #f8f9fa;
+				--text-primary: #000000;
+				--text-secondary: #6c757d;
+				--border-color: #dee2e6;
+			}
+			
+			.dark-theme {
+				--bg-primary: #1a1a1a;
+				--bg-secondary: #2d2d2d;
+				--text-primary: #ffffff;
+				--text-secondary: #a0a0a0;
+				--border-color: #404040;
+			}
+			
+
+/* Layout */
+.Outlet{
+    @apply pt-40 
+}
+/* Home */
+.Home {
+    position: hidden;
+    width: 100%;
+    overflow: hidden;
+}
+.Home{
+      @apply m-0  bg-linear-to-bl from-[#E3F6E6] to-[#2E51DE] bg-no-repeat
+}
+/* .Home{
+    		    background-color: var(--bg-primary);
+				color: var(--text-primary);
+				transition: var(--transition);
+				font-family: sans-serif;
+} */
+.triangle-left {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 40%; /* Ajustez la largeur selon vos besoins */
+    height: 100%;
+    opacity: 30%;
+    z-index: 0;
+}
+
+.triangle-right {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 40%; /* Ajustez la largeur selon vos besoins */
+    height: 100%;
+    z-index: 0;
+    opacity: 30%;
+}
+
+/* Version alternative avec triangles plus petits */
+.triangle-left.small {
+    width: 25%;
+}
+
+.triangle-right.small {
+    width: 25%;
+}
+
+/* Version avec triangles plus grands */
+.triangle-left.large {
+    width: 50%;
+}
+
+.triangle-right.large {
+    width: 50%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .triangle-left,
+    .triangle-right {
+        width: 30%;
+    }
+}
+.text{
+    @apply relative m-[5rem]
+}
+.title{
+    @apply h-full   relative z-2   font-bold text-white   flex  justify-items-start items-center
+}
+.title1{
+    @apply relative z-2 font-semibold text-white flex items-baseline text-2xl
+}
+
+/* Style login page */
+.Login{
+    @apply h-[100vh] relative flex justify-between items-center z-2 pr-[9rem]
+}
+.formulaire{
+    @apply flex items-center justify-center z-2 bg-[#3E476B]  w-[600px]  h-[100vh]
+}
+label{
+    @apply block flex justify-center p-3 font-semibold text-3xl text-white
+}
+input{
+    @apply border-2 w-[500px] h-[3rem] p-3 rounded-2xl  border-none focus:outline-none bg-gray-200 shadow-[1rem] shadow-gray-50 hover:bg-blue-100 hover:scale-x-[1.01]
+}
+.connexion{
+    @apply bg-[#2044c4] text-2xl text-gray-100 p-[10px] mt-[2rem] rounded-3xl  w-[400px] font-semibold shadow-gray-800 shadow-[5px]
+}
+.conex{
+    @apply flex justify-center
+}
+.create{
+    @apply flex justify-center pt-[1rem] text-gray-100 hover:text-blue-400
+}

@@ -1,0 +1,167 @@
+.container {
+  padding: 0.5rem;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+.header h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.25rem;
+}
+.header p {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Message d'erreur */
+.errorBox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #fef2f2;
+  border-radius: 16px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  color: #991b1b;
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+}
+.retryBtn {
+  background: white;
+  border: 1px solid #991b1b;
+  border-radius: 30px;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #991b1b;
+}
+
+/* Carte récapitulative */
+.recapCard {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Sélecteur mode de paiement */
+.modeSelector {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+.modeSelectorTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+}
+.modeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.modeBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.modeBtn.active {
+  border-color: #0f766e;
+  background: #f0fdfa;
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.1);
+}
+.modeIcon {
+  color: #0f766e;
+}
+.modeName {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #0f172a;
+}
+.modeDesc {
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+/* Navigation */
+.navRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1.5rem;
+  margin-top: 0.5rem;
+}
+.btnPrimary,
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: 40px;
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btnPrimary {
+  background: #0f766e;
+  color: white;
+}
+.btnPrimary:hover:not(.disabled) {
+  background: #0d5c56;
+  transform: translateY(-1px);
+}
+.btnSecondary {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+.btnSecondary:hover {
+  background: #e2e8f0;
+}
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.spinner {
+  animation: spin 0.6s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .modeGrid {
+    grid-template-columns: 1fr;
+  }
+  .navRow {
+    flex-direction: column;
+  }
+  .btnPrimary,
+  .btnSecondary {
+    justify-content: center;
+  }
+}

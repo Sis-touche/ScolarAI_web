@@ -1,0 +1,428 @@
+/* Layout page */
+.page {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding: 2rem 1rem;
+  font-family: 'DM Sans', 'Segoe UI', system-ui, sans-serif;
+}
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.25rem;
+}
+.subtitle {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+.filterBtn {
+  padding: 0.5rem 1rem;
+  border-radius: 40px;
+  border: 1.5px solid #e2e8f0;
+  background: white;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: #475569;
+  transition: all 0.2s;
+}
+.filterBtnActive {
+  background: #0f766e;
+  border-color: #0f766e;
+  color: white;
+}
+
+/* Card */
+.card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.cardExpanded {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+}
+.cardHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.cardIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #f0fdfa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f766e;
+}
+.cardTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+}
+.cardId {
+  font-size: 0.7rem;
+  background: #f1f5f9;
+  padding: 0.1rem 0.4rem;
+  border-radius: 6px;
+  font-family: monospace;
+}
+.cardMeta {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  font-size: 0.7rem;
+  color: #64748b;
+}
+.scanBadge {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 0.1rem 0.5rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+.cardHeaderRight {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.alertDot {
+  width: 20px;
+  height: 20px;
+  background: #f59e0b;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+.chevron {
+  color: #94a3b8;
+}
+
+/* Card body */
+.cardBody {
+  padding: 0 1.25rem 1.25rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* Progress */
+.progressWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+}
+.progressBar {
+  flex: 1;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #0f766e, #14b8a6);
+  border-radius: 10px;
+}
+.progressLabel {
+  font-size: 0.7rem;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+/* Method selection */
+.methodSection {
+  margin-bottom: 1rem;
+}
+.methodTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+  margin: 0 0 0.5rem;
+}
+.methodRow {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.methodBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 30px;
+  background: white;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.methodBtnActive {
+  border-color: #0f766e;
+  background: #f0fdfa;
+  color: #0f766e;
+  font-weight: 600;
+}
+
+/* Installments list */
+.installList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.installRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  background: #f8fafc;
+  border-radius: 14px;
+  border-left: 3px solid;
+  gap: 0.5rem;
+}
+.installLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.installNum {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+.installDate {
+  font-size: 0.65rem;
+  color: #94a3b8;
+}
+.installRight {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.installAmount {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #0f172a;
+}
+.payBtn {
+  background: #0f766e;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 0.3rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 40px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Simulation box */
+.simBox {
+  margin-top: 1rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 16px;
+  padding: 1rem;
+}
+.simHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #166534;
+}
+.simRef {
+  font-size: 0.7rem;
+  background: #dcfce7;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-family: monospace;
+}
+.simBtn {
+  background: #0f766e;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+.simClose {
+  background: transparent;
+  border: 1px solid #16a34a;
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+/* Loading & error */
+.loading,
+.loadingPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 2rem 0;
+  color: #64748b;
+}
+.loadingPage {
+  padding: 4rem 0;
+}
+.spinner {
+  animation: spin 0.7s linear infinite;
+}
+.spinnerSmall {
+  animation: spin 0.6s linear infinite;
+}
+.spinnerLg {
+  width: 28px;
+  height: 28px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #0f766e;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+.errorBox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 16px;
+  padding: 0.75rem 1rem;
+  color: #991b1b;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.retryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: white;
+  border: 1px solid #991b1b;
+  border-radius: 30px;
+  padding: 0.2rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.7rem;
+}
+.empty,
+.emptyPage {
+  text-align: center;
+  padding: 2rem;
+  color: #94a3b8;
+}
+.emptyPage {
+  padding: 4rem 0;
+}
+.emptyIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.emptyText {
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* New button & pagination */
+.newBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #0f766e;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.newBtn:hover {
+  background: #0d5c56;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.pageBtn {
+  padding: 0.5rem 1.2rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+.pageBtnDisabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.pageInfo {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* Animations */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

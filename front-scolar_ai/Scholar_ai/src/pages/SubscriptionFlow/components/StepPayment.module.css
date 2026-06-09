@@ -1,0 +1,206 @@
+.container {
+  padding: 0.5rem;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+.header h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.25rem;
+}
+.header p {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Méthodes de paiement */
+.methodsGrid {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.methodBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  color: #475569;
+}
+.methodBtn:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+}
+.activeMethod {
+  border-color: #0f766e;
+  background: #f0fdfa;
+  color: #0f766e;
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.1);
+}
+.methodBtn span {
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+/* Grille des tranches */
+.installmentsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* États de chargement / vide / erreur */
+.loadingBox,
+.emptyBox,
+.errorBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  background: #f8fafc;
+  border-radius: 20px;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+.errorBox {
+  background: #fef2f2;
+  color: #991b1b;
+}
+.spinner {
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Simulation overlay */
+.simOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.simCard {
+  background: white;
+  border-radius: 28px;
+  padding: 1.5rem;
+  max-width: 320px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.2);
+}
+.simHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.simLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #0f766e;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+.simClose {
+  background: none;
+  border: none;
+  color: #64748b;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* Navigation */
+.navRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1.5rem;
+}
+.btnPrimary,
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: 40px;
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btnPrimary {
+  background: #0f766e;
+  color: white;
+}
+.btnPrimary:hover:not(.disabled) {
+  background: #0d5c56;
+  transform: translateY(-1px);
+}
+.btnSecondary {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+.btnSecondary:hover {
+  background: #e2e8f0;
+}
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.hint {
+  text-align: center;
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .methodsGrid {
+    justify-content: center;
+  }
+  .installmentsGrid {
+    grid-template-columns: 1fr;
+  }
+  .navRow {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .btnPrimary,
+  .btnSecondary {
+    justify-content: center;
+  }
+}

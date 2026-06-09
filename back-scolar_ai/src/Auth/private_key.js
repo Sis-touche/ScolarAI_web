@@ -1,0 +1,1 @@
+module.exports = 'CLE_PRIVEE_SCOLAR_AI_2026_version_1.0'
