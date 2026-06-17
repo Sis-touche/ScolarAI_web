@@ -8,6 +8,7 @@ import invoicesReducer from "./reducer/invoiceSlice";
 import subscriptionReducer from "./reducer/subscriptionSlice";
 import verificationReducer from "./reducer/verificationSlice";
 import qrCodeVerificationReducer from "./reducer/mobileActivationSlice";
+import analyseReducer from "./reducer/analysisSlice";
 export const Store = configureStore({
     reducer:{
         users:userReducer,
@@ -19,6 +20,7 @@ export const Store = configureStore({
         subscriptions:subscriptionReducer,
         emailVerification:verificationReducer,
         mobileActivation:qrCodeVerificationReducer,
+        analysis:analyseReducer,
     },
     devTools:true
 });

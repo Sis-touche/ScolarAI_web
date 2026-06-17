@@ -1,0 +1,475 @@
+/* ── Design System & Variables ── */
+:root {
+  --c-primary: #7a81ec;
+  --c-primary-dark: #5b62cb;
+  --c-primary-dim: rgba(122, 129, 236, 0.08);
+  --c-primary-glow: rgba(122, 129, 236, 0.15);
+
+  --c-bg: #f8fafc;
+  --c-surface: #ffffff;
+  --c-surface-hover: #f1f5f9;
+  --c-surface2: #f8fafc;
+  --c-border: #e2e8f0;
+  --c-border-focus: #cbd5e1;
+
+  /* Couleurs Sémantiques Logiques */
+  --c-success: #10b981;
+  --c-success-dim: rgba(16, 185, 129, 0.1);
+  --c-success-text: #065f46;
+  
+  --c-warning: #f59e0b;
+  --c-warning-dim: rgba(245, 158, 11, 0.1);
+  --c-warning-text: #92400e;
+
+  --c-danger: #ef4444;
+  --c-danger-dim: rgba(239, 68, 68, 0.08);
+  --c-danger-text: #991b1b;
+
+  /* Typographie Haute Lisibilité */
+  --c-text: #0f172a;
+  --c-text-soft: #475569;
+  --c-text-muted: #64748b;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+  --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+
+  --r-sm: 6px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 16px;
+
+  --font-ui: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ── Global Resets ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.font-semibold { font-weight: 600; }
+.text-primary { color: var(--c-primary) !important; }
+.text-warning { color: var(--c-warning-text) !important; }
+.text-danger { color: var(--c-danger-text) !important; }
+.text-color-dark { color: var(--c-text); }
+
+/* ── Layout Page ── */
+.fa-page {
+  min-height: 100vh;
+  background-color: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-ui);
+  padding: 3rem 1.5rem;
+  background-image: radial-gradient(circle at 50% 0%, var(--c-primary-dim) 0%, transparent 50%);
+}
+
+.fa-container {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+/* ── Header Dashboard ── */
+.fa-header {
+  margin-bottom: 2.5rem;
+}
+.fa-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-primary);
+  margin-bottom: 0.5rem;
+}
+.fa-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--c-text);
+}
+.fa-title-accent {
+  color: var(--c-primary);
+  background: linear-gradient(to right, var(--c-primary), #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.fa-subtitle {
+  color: var(--c-text-soft);
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* ── Upload Box Card ── */
+.fa-upload-card {
+  background: var(--c-surface);
+  border: 2px dashed var(--c-border);
+  border-radius: var(--r-xl);
+  padding: 1.5rem 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+.fa-upload-card:focus-within {
+  border-color: var(--c-primary);
+}
+.fa-upload-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+.fa-file-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background: var(--c-surface2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--c-text-soft);
+  transition: all 0.2s ease;
+}
+.fa-file-label:hover {
+  background: var(--c-surface-hover);
+  border-color: var(--c-border-focus);
+}
+.fa-file-input { display: none; }
+.fa-file-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.875rem;
+  background: var(--c-primary-dim);
+  border: 1px solid rgba(122, 129, 236, 0.2);
+  border-radius: 50px;
+  font-size: 0.825rem;
+  color: var(--c-primary);
+  font-family: var(--font-mono);
+}
+.fa-upload-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-left: auto;
+}
+
+/* ── Boutons standardisés ── */
+.fa-btn {
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--r-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+.fa-btn--primary {
+  background: var(--c-primary);
+  color: #ffffff;
+}
+.fa-btn--primary:hover { background: var(--c-primary-dark); }
+.fa-btn--ghost {
+  background: transparent;
+  border-color: var(--c-border);
+  color: var(--c-text-soft);
+}
+.fa-btn--ghost:hover {
+  background: var(--c-surface2);
+  color: var(--c-text);
+}
+.fa-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 0.6s linear infinite;
+  margin-right: 0.5rem;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Container Cards Blocs ── */
+.fa-results { display: flex; flex-direction: column; gap: 2rem; }
+.fa-card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.fa-card-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--c-border);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+}
+.fa-card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+.fa-card-icon--blue { background: var(--c-primary-dim); color: var(--c-primary); }
+.fa-card-icon--gold { background: var(--c-warning-dim); color: var(--c-warning); }
+.fa-card-icon--red { background: var(--c-danger-dim); color: var(--c-danger); }
+.fa-card-icon--green { background: var(--c-success-dim); color: var(--c-success); }
+
+.fa-card-title { font-weight: 700; font-size: 1rem; color: var(--c-text); }
+.fa-card-count {
+  margin-left: auto;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 50px;
+}
+.fa-card-count--red { background: var(--c-danger-dim); color: var(--c-danger-text); }
+.fa-card-count--gold { background: var(--c-warning-dim); color: var(--c-warning-text); }
+.fa-card-body { padding: 1.5rem; }
+
+/* ── KPI Metadonnées Grid ── */
+.fa-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.fa-kpi {
+  background: var(--c-surface2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  padding: 1.25rem;
+}
+.fa-kpi-value { font-size: 1.75rem; font-weight: 800; color: var(--c-text); letter-spacing: -0.02em; }
+.fa-kpi-label { font-size: 0.85rem; color: var(--c-text-muted); margin-top: 0.25rem; font-weight: 500; }
+.fa-meta-date { margin-top: 1rem; font-size: 0.8rem; color: var(--c-text-muted); }
+.fa-meta-date span { color: var(--c-text-soft); font-weight: 600; }
+
+/* ── Tableaux Standardisés ── */
+.fa-table-wrap { overflow-x: auto; margin-top: 0.5rem; }
+.fa-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.925rem;
+}
+.fa-table th {
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: var(--c-text-soft);
+  border-bottom: 2px solid var(--c-border);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.fa-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--c-border);
+  color: var(--c-text-soft);
+}
+.fa-table tbody tr:last-child td { border-bottom: none; }
+
+/* Table Interactive Élèves en difficulté */
+.fa-table--clickable tbody tr {
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.fa-table--clickable tbody tr:hover {
+  background-color: var(--c-danger-dim);
+}
+.fa-table-helper-text {
+  font-size: 0.85rem;
+  color: var(--c-text-soft);
+  margin-bottom: 1rem;
+  background: var(--c-surface2);
+  padding: 0.625rem 1rem;
+  border-radius: var(--r-sm);
+  border-left: 3px solid var(--c-warning);
+}
+
+/* Chips d'étiquettes */
+.fa-chip {
+  display: inline-flex;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 4px;
+  background: var(--c-surface2);
+  border: 1px solid var(--c-border);
+  color: var(--c-text-soft);
+}
+.fa-chip--purple { background: var(--c-primary-dim); color: var(--c-primary); border-color: transparent; }
+.fa-chip--outline { background: transparent; border-color: var(--c-border); }
+.fa-chip--danger-light { background: var(--c-danger-dim); color: var(--c-danger-text); border-color: transparent; }
+.fa-chip--bold { background: var(--c-text); color: #fff; border: none; }
+
+/* Rangs Spécifiques (#1, #2, #3...) */
+.fa-rank {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: var(--c-surface2);
+  color: var(--c-text-muted);
+}
+.fa-rank--1 { background: #fef3c7; color: #d97706; }
+.fa-rank--2 { background: #f1f5f9; color: #475569; }
+.fa-rank--3 { background: #ffedf5; color: #db2777; }
+.fa-rank--danger { background: var(--c-danger-dim); color: var(--c-danger-text); }
+
+/* Bulles de Notes Dynamiques */
+.fa-score {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  padding: 0.25rem 0.625rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+}
+.fa-score--high { background: var(--c-success-dim); color: var(--c-success-text); }
+.fa-score--mid { background: var(--c-warning-dim); color: var(--c-warning-text); }
+.fa-score--low { background: var(--c-danger-dim); color: var(--c-danger-text); }
+
+/* Barres de progression (Taux échecs matières) */
+.fa-bar-wrap { display: flex; align-items: center; gap: 0.75rem; max-width: 240px; }
+.fa-bar-track { background: var(--c-border); height: 8px; width: 100%; border-radius: 10px; overflow: hidden; }
+.fa-bar-fill { height: 100%; border-radius: 10px; }
+.fa-bar-label { font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600; min-width: 35px; text-align: right; }
+
+/* Blocs Correlation */
+.fa-corr-wrap { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+.fa-corr-big { font-size: 2.5rem; font-weight: 800; color: var(--c-primary); font-family: var(--font-mono); }
+.fa-corr-label { font-size: 0.8rem; color: var(--c-text-muted); text-transform: uppercase; font-weight: 600; }
+.fa-corr-desc { flex: 1; min-width: 260px; font-size: 0.95rem; color: var(--c-text-soft); line-height: 1.5; }
+
+/* JSON Pre view */
+.fa-json-pre { background: #0f172a; color: #e2e8f0; font-family: var(--font-mono); padding: 1.25rem; border-radius: var(--r-md); font-size: 0.825rem; overflow-x: auto; }
+
+/* ═══════════════════════════════════════════
+    POPUP MODAL DESIGN
+   ═══════════════════════════════════════════ */
+.fa-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.fa-modal {
+  background: var(--c-surface);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid var(--c-border);
+}
+.fa-modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--c-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: var(--c-surface2);
+}
+.fa-modal-header h2 { font-size: 1.25rem; font-weight: 800; color: var(--c-text); letter-spacing: -0.01em; }
+.fa-modal-meta-row { display: flex; gap: 0.5rem; margin-top: 0.5rem; align-items: center; }
+.fa-modal-age { font-size: 0.8rem; color: var(--c-text-muted); font-weight: 500; }
+
+.fa-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--c-text-muted);
+  cursor: pointer;
+  padding: 0.25rem;
+  transition: color 0.15s ease;
+}
+.fa-modal-close:hover { color: var(--c-danger); }
+
+.fa-modal-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
+
+/* Bannière de Note Spécifique Modal */
+.fa-modal-score-banner {
+  background: var(--c-surface2);
+  border: 1px solid var(--c-border);
+  padding: 1rem 1.25rem;
+  border-radius: var(--r-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fa-modal-score-label { font-weight: 700; font-size: 0.95rem; color: var(--c-text); }
+.fa-score--large { font-size: 1.15rem; padding: 0.4rem 0.8rem; }
+
+/* Blocs d'informations structurés */
+.fa-modal-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.fa-modal-section-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.fa-modal-text {
+  font-size: 0.925rem;
+  color: var(--c-text-soft);
+  line-height: 1.5;
+}
+.fa-diagnostic-text {
+  background: var(--c-primary-dim);
+  padding: 1rem;
+  border-radius: var(--r-md);
+  color: var(--c-text);
+  border-left: 3px solid var(--c-primary);
+}
+
+/* Liste des matières en échec */
+.fa-points-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+}
+.fa-points-list li {
+  font-size: 0.85rem;
+  background: var(--c-surface2);
+  border: 1px solid var(--c-border);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  color: var(--c-text-soft);
+}
+.fa-badge-note {
+  font-family: var(--font-mono);
+  color: var(--c-danger-text);
+  font-weight: 700;
+}
+
+/* Erreurs */
+.fa-error {
+  background: var(--c-danger-dim);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: var(--c-danger-text);
+  padding: 1rem;
+  border-radius: var(--r-md);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}

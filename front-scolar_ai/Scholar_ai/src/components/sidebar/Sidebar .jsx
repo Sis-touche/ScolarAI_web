@@ -14,6 +14,7 @@ import {
 } from 'react-icons/md';
 
 import './Sidebar.css';
+import { TbDeviceDesktopAnalytics } from 'react-icons/tb';
 
 /* ── nav configs ── */
 const PubLinks = [
@@ -27,6 +28,7 @@ const UserLinks = [
   { icon: <GoCreditCard />,            label: 'Abonnement',        link: '/user/abonnement' },
   { icon: <GrDocumentUser  />,        label: 'Mes Abonnement',         link: '/user/mes_abonnement' },
   { icon: <FaUserCog  />,        label: 'Condition',         link: '/user/condition' },
+  { icon: <TbDeviceDesktopAnalytics  />,        label: 'Analyse',         link: '/user/file_analyzer' },
 ];
 
 const SecretariatLinks = [

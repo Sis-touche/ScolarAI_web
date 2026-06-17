@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import {UserLayout,DashboardUser,Abonnement,ConditionUser, MesAbonnement} from './IndexUser';
+import {UserLayout,DashboardUser,Abonnement,ConditionUser, MesAbonnement, FileAnalyzer} from './IndexUser';
 import SecureLayout from '../SecureLayout';
 import NotFound from '../../utils/NotFound';
 const UserRooter = () => {
@@ -12,6 +12,7 @@ const UserRooter = () => {
                         <Route path='abonnement' element={<Abonnement/>}/>
                         <Route path='mes_abonnement' element={<MesAbonnement/>}/>
                         <Route path='condition' element={<ConditionUser/>}/>
+                        <Route path='file_analyzer' element={<FileAnalyzer/>}/>
                 </Route>
                         <Route path = "*" element={<NotFound/>}/>
             </Route> 

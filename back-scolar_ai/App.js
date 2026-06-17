@@ -18,7 +18,8 @@ app
     ));
 
 
-
+    // chaine de Markov 
+    require('./src/root/Chaine de Markove/Analyse')(app);
       // root User
     require('./src/root/UserRoot/findAllUser')(app);
     require('./src/root/UserRoot/findByPkUser')(app);
